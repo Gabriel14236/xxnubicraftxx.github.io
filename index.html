@@ -4,15 +4,127 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Noobi & The Multiverse Band</title>
-  <link rel="stylesheet" href="xxnubicraftxx.github.io/css/style.css" />
+  <meta name="description" content="Noobi & The Multiverse Band — Una aventura musical a través de universos infinitos">
+  <style>
+  /* -------------------------
+     CSS integrado (multicolor + rock vibe)
+     ------------------------- */
+  :root{
+    --bg1:#0f1226;
+    --muted:#e6e6e6;
+    --accent1:#ff6b6b;
+    --accent2:#7b61ff;
+    --accent3:#00d4ff;
+    --card-bg: rgba(255,255,255,0.04);
+    --glass: rgba(255,255,255,0.03);
+    --glass-2: rgba(255,255,255,0.02);
+    --radius:14px;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif;
+    color:var(--muted);
+    background: radial-gradient(1000px 600px at 10% 10%, rgba(123,97,255,0.06), transparent 10%),
+                radial-gradient(900px 500px at 90% 90%, rgba(0,212,255,0.04), transparent 10%),
+                linear-gradient(120deg, #0f1226 0%, #141527 40%, #0e1a2b 100%);
+    -webkit-font-smoothing:antialiased;
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+  }
+
+  /* header */
+  .site-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 20px;
+    background: linear-gradient(90deg, rgba(255,107,107,0.03), rgba(123,97,255,0.02));
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+    animation: dropIn .6s ease;
+  }
+  @keyframes dropIn{from{transform:translateY(-8px);opacity:0}to{transform:none;opacity:1}}
+
+  .brand{display:flex;align-items:center;gap:14px}
+  .logo-placeholder{
+    width:64px;height:64px;border-radius:12px;
+    background: linear-gradient(45deg,var(--accent1),var(--accent2));
+    display:flex;align-items:center;justify-content:center;font-weight:800;color:white;font-size:14px;letter-spacing:0.6px;
+    box-shadow: 0 6px 18px rgba(123,97,255,0.12), inset 0 -6px 12px rgba(0,0,0,0.15);
+  }
+  .brand h1{font-size:18px;margin:0;color:white}
+  .tagline{font-size:12px;margin:0;color:rgba(255,255,255,0.7)}
+
+  .main-nav{display:flex;align-items:center;gap:12px}
+  .main-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:10px;align-items:center}
+  .main-nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:10px;font-weight:700;transition:all .18s}
+  .main-nav a:hover{transform:translateY(-3px);color:white}
+  .lang-btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:10px;color:var(--muted);cursor:pointer;font-weight:800}
+
+  /* hero */
+  .hero{
+    display:flex;align-items:center;gap:28px;padding:36px;max-width:1200px;margin:28px auto;background:linear-gradient(180deg,var(--glass),transparent);border-radius:var(--radius);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.45);
+  }
+  .hero-inner{flex:1}
+  .hero h2{font-size:30px;margin:0 0 10px;color:white;text-shadow: 0 6px 24px rgba(123,97,255,0.06)}
+  .hero p{margin:0 0 18px;color:rgba(255,255,255,0.78)}
+  .cta-row{display:flex;gap:10px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:10px 16px;border-radius:12px;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;text-decoration:none;font-weight:800;box-shadow: 0 8px 22px rgba(123,97,255,0.12);transition:transform .18s}
+  .btn:hover{transform:translateY(-4px)}
+  .btn.outline{background:transparent;border:1px solid rgba(255,255,255,0.06)}
+
+  .hero-img-placeholder{width:320px;height:200px;border-radius:12px;overflow:hidden;border:2px solid rgba(255,255,255,0.03);
+    background: linear-gradient(135deg,#ff9aa2,#ffd6a5,#caffbf,#9bf6ff);
+    background-size:400% 400%; animation: gradientFlow 8s ease infinite;}
+  @keyframes gradientFlow{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+
+  /* sections */
+  .section{max-width:1100px;margin:20px auto;padding:18px;background:linear-gradient(180deg,var(--glass-2),transparent);border-radius:12px}
+  .section h2{color:var(--accent2);margin:0 0 12px;font-size:20px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:10px}
+  .card{background:var(--card-bg);padding:12px;border-radius:12px;color:var(--muted);text-align:center;border:1px solid rgba(255,255,255,0.02);transition:transform .18s, box-shadow .18s}
+  .card:hover{transform:translateY(-6px);box-shadow: 0 10px 30px rgba(0,0,0,0.45)}
+  .card .img-placeholder{width:100%;height:160px;border-radius:8px;margin-bottom:10px;background:linear-gradient(135deg,var(--accent3),var(--accent2)); background-size:300% 300%; animation: slowShift 6s linear infinite;}
+  @keyframes slowShift{0%{background-position:0% 0%}100%{background-position:100% 100%}}
+
+  .episode-list{list-style:none;padding:0;margin:8px 0;color:rgba(255,255,255,0.85)}
+  .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+  .gallery-grid .square{height:120px;border-radius:10px;background:linear-gradient(45deg,#ffd6a5,#caffbf,#9bf6ff);background-size:400% 400%; animation: gradientFlow 8s ease infinite; border:2px solid rgba(255,255,255,0.03)}
+
+  .creator-card{display:flex;gap:14px;align-items:center}
+  .creator-placeholder{width:120px;height:120px;border-radius:12px;background:linear-gradient(45deg,var(--accent1),var(--accent3));display:flex;align-items:center;justify-content:center;font-weight:800;color:white}
+
+  footer.site-footer{text-align:center;padding:16px;color:rgba(255,255,255,0.45);margin-top:18px;border-top:1px solid rgba(255,255,255,0.02)}
+
+  /* small screens */
+  @media (max-width:900px){
+    .hero{flex-direction:column;text-align:center}
+    .hero-img-placeholder{width:100%;height:200px}
+    .main-nav ul{display:none}
+  }
+
+  /* smooth appear animations */
+  .fade-in {opacity:0; transform:translateY(8px); animation: fadeInUp .6s forwards}
+  .delay-1{animation-delay:.08s}.delay-2{animation-delay:.16s}.delay-3{animation-delay:.24s}
+  @keyframes fadeInUp{to{opacity:1; transform:none}}
+  </style>
 </head>
 <body>
   <header class="site-header">
     <div class="brand">
-      <img src="img/portada.jpg" alt="Noobi & The Multiverse Band" class="logo">
-      <h1 data-i18n="title">Noobi & The Multiverse Band</h1>
-      <p class="tagline" data-i18n="tagline">Una aventura musical a través de universos infinitos</p>
+      <div class="logo-placeholder">NMB</div>
+      <div>
+        <h1 data-i18n="title">Noobi & The Multiverse Band</h1>
+        <p class="tagline" data-i18n="tagline">Una aventura musical a través de universos infinitos</p>
+      </div>
     </div>
+
     <nav class="main-nav">
       <button id="lang-btn" class="lang-btn">EN</button>
       <ul>
@@ -27,7 +139,7 @@
   </header>
 
   <main>
-    <section id="inicio" class="hero">
+    <section id="inicio" class="hero fade-in delay-1">
       <div class="hero-inner">
         <h2 data-i18n="hero_title">Imagina todos los mundos unidos por la música</h2>
         <p data-i18n="hero_sub">Acompaña a Noobi, Luke y Mauro en aventuras musicales a través de universos distintos.</p>
@@ -36,36 +148,39 @@
           <a href="#musica" class="btn outline" data-i18n="listen">Escuchar música</a>
         </div>
       </div>
-      <img src="img/generic.jpg" alt="Noobi Band" class="hero-img">
+      <div class="hero-img-placeholder" aria-hidden="true"></div>
     </section>
 
-    <section id="personajes" class="section">
+    <section id="personajes" class="section fade-in delay-2">
       <h2 data-i18n="characters_title">Personajes</h2>
       <div class="cards">
         <article class="card">
-          <img src="img/noobi.jpg" alt="Noobi">
+          <div class="img-placeholder" style="background:linear-gradient(135deg,#ff9aa2,#ffd6a5)"></div>
           <h3>Noobi</h3>
           <p data-i18n="noobi_desc">Curioso, creativo y líder del grupo. Puede transformarse en varias versiones: cubo de Geometry Dash, versión Dandy’s World y su versión humana.</p>
         </article>
+
         <article class="card">
-          <img src="img/luke.jpg" alt="Luke">
+          <div class="img-placeholder" style="background:linear-gradient(135deg,#caffbf,#9bf6ff)"></div>
           <h3>Luke</h3>
           <p data-i18n="luke_desc">Amable y empático. Toca la guitarra y es el corazón del grupo, también actúa como la voz de la razón.</p>
         </article>
+
         <article class="card">
-          <img src="img/mauro.jpg" alt="Mauro">
+          <div class="img-placeholder" style="background:linear-gradient(135deg,#ffd6a5,#ff9aa2)"></div>
           <h3>Mauro</h3>
           <p data-i18n="mauro_desc">El payaso del grupo: gracioso, impulsivo y siempre sorprende con ideas locas.</p>
         </article>
+
         <article class="card">
-          <img src="img/creator.jpg" alt="Blair">
+          <div class="img-placeholder" style="background:linear-gradient(135deg,#bde0fe,#cdb4db)"></div>
           <h3>Blair</h3>
           <p data-i18n="blair_desc">Madre cariñosa que cuida de Noobi, Luke y Mauro. Tiene un pasado misterioso y a veces canta con ellos.</p>
         </article>
       </div>
     </section>
 
-    <section id="episodios" class="section">
+    <section id="episodios" class="section fade-in delay-3">
       <h2 data-i18n="episodes_title">Episodios</h2>
       <p data-i18n="episodes_intro">Aquí van listados los episodios y sinopsis. (Puedes editar y añadir episodios fácilmente.)</p>
       <ul class="episode-list">
@@ -75,17 +190,17 @@
       </ul>
     </section>
 
-    <section id="galeria" class="section">
+    <section id="galeria" class="section fade-in">
       <h2 data-i18n="gallery_title">Galería</h2>
       <div class="gallery-grid">
-        <img src="img/generic.jpg" alt="gallery1">
-        <img src="img/generic.jpg" alt="gallery2">
-        <img src="img/generic.jpg" alt="gallery3">
-        <img src="img/generic.jpg" alt="gallery4">
+        <div class="square" title="Placeholder 1"></div>
+        <div class="square" title="Placeholder 2"></div>
+        <div class="square" title="Placeholder 3"></div>
+        <div class="square" title="Placeholder 4"></div>
       </div>
     </section>
 
-    <section id="musica" class="section">
+    <section id="musica" class="section fade-in">
       <h2 data-i18n="music_title">Música</h2>
       <p data-i18n="music_intro">Lista de canciones (placeholder). Aquí podés enlazar tu canal de YouTube o playlists.</p>
       <ul>
@@ -94,10 +209,10 @@
       </ul>
     </section>
 
-    <section id="creador" class="section">
+    <section id="creador" class="section fade-in">
       <h2 data-i18n="creator_title">Sobre el creador</h2>
       <div class="creator-card">
-        <img src="img/creator.jpg" alt="xxNUBICRAFTxx">
+        <div class="creator-placeholder">xxNUBICRAFTxx</div>
         <div>
           <h3>xxNUBICRAFTxx</h3>
           <p>Creado por <strong>xxNUBICRAFTxx</strong>, animador y YouTuber apasionado por la música, las aventuras y los mundos cruzados.</p>
@@ -111,6 +226,120 @@
     <p>© <span id="year"></span> Noobi & The Multiverse Band — All rights reserved.</p>
   </footer>
 
-  <script src="xxnubicraftxx.github.io/js/script.js"></script>
+  <script>
+  /* -------------------------
+     JS integrado: traducciones, toggle de idioma, animaciones y smooth scroll
+     ------------------------- */
+  const translations = {
+    "es": {
+      "title":"Noobi & The Multiverse Band",
+      "tagline":"Una aventura musical a través de universos infinitos",
+      "nav_home":"Inicio",
+      "nav_characters":"Personajes",
+      "nav_episodes":"Episodios",
+      "nav_gallery":"Galería",
+      "nav_music":"Música",
+      "nav_creator":"Sobre el creador",
+      "hero_title":"Imagina todos los mundos unidos por la música",
+      "hero_sub":"Acompaña a Noobi, Luke y Mauro en aventuras musicales a través de universos distintos.",
+      "watch_eps":"Ver episodios",
+      "listen":"Escuchar música",
+      "characters_title":"Personajes",
+      "noobi_desc":"Curioso, creativo y líder del grupo. Puede transformarse en varias versiones: cubo de Geometry Dash, versión Dandy’s World y su versión humana.",
+      "luke_desc":"Amable y empático. Toca la guitarra y es el corazón del grupo, también actúa como la voz de la razón.",
+      "mauro_desc":"El payaso del grupo: gracioso, impulsivo y siempre sorprende con ideas locas.",
+      "blair_desc":"Madre cariñosa que cuida de Noobi, Luke y Mauro. Tiene un pasado misterioso y a veces canta con ellos.",
+      "episodes_title":"Episodios",
+      "episodes_intro":"Aquí van listados los episodios y sinopsis. (Puedes editar y añadir episodios fácilmente.)",
+      "ep1":"Presentación de Noobi & The Multiverse Band.",
+      "ep2":"Noobi se transforma por primera vez en su versión cubo.",
+      "ep3":"Concierto con invitados de Dandy’s World.",
+      "gallery_title":"Galería",
+      "music_title":"Música",
+      "music_intro":"Lista de canciones (placeholder). Aquí podés enlazar tu canal de YouTube o playlists.",
+      "creator_title":"Sobre el creador",
+      "contact":"Contacto: tu-email@example.com"
+    },
+    "en": {
+      "title":"Noobi & The Multiverse Band",
+      "tagline":"A musical adventure across infinite universes",
+      "nav_home":"Home",
+      "nav_characters":"Characters",
+      "nav_episodes":"Episodes",
+      "nav_gallery":"Gallery",
+      "nav_music":"Music",
+      "nav_creator":"About the creator",
+      "hero_title":"Imagine all the worlds united by music",
+      "hero_sub":"Join Noobi, Luke and Mauro on musical adventures across different universes.",
+      "watch_eps":"Watch episodes",
+      "listen":"Listen",
+      "characters_title":"Characters",
+      "noobi_desc":"Curious, creative and the group's leader. Can transform into various versions: Geometry Dash cube, Dandy’s World version and his human self.",
+      "luke_desc":"Kind and empathetic. Plays guitar and is the heart of the band; often the voice of reason.",
+      "mauro_desc":"The group's clown: funny, impulsive and full of wild ideas.",
+      "blair_desc":"A caring mother who looks after Noobi, Luke and Mauro. Has a mysterious past and occasionally sings with them.",
+      "episodes_title":"Episodes",
+      "episodes_intro":"Episodes and synopses go here. (You can edit and add episodes easily.)",
+      "ep1":"Introduction of Noobi & The Multiverse Band.",
+      "ep2":"Noobi transforms for the first time into his cube version.",
+      "ep3":"Concert with guests from Dandy’s World.",
+      "gallery_title":"Gallery",
+      "music_title":"Music",
+      "music_intro":"Playlist placeholder. Link your channel or playlists here.",
+      "creator_title":"About the creator",
+      "contact":"Contact: your-email@example.com"
+    }
+  };
+
+  let currentLang = 'es';
+
+  function setText(lang){
+    document.querySelectorAll('[data-i18n]').forEach(el=>{
+      const key = el.getAttribute('data-i18n');
+      if(translations[lang] && translations[lang][key]){
+        el.textContent = translations[lang][key];
+      }
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  }
+
+  // language toggle button
+  const btn = document.getElementById('lang-btn');
+  btn.addEventListener('click', ()=>{
+    currentLang = currentLang === 'es' ? 'en' : 'es';
+    btn.textContent = currentLang === 'es' ? 'EN' : 'ES';
+    setText(currentLang);
+  });
+
+  // init
+  setText(currentLang);
+
+  // smooth scroll for internal links
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if(target){
+        window.scrollTo({top: target.offsetTop - 70, behavior: 'smooth'});
+      }
+    });
+  });
+
+  // small reveal on scroll
+  const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {threshold:0.12});
+  document.querySelectorAll('.section, .hero').forEach(el=>{
+    observer.observe(el);
+  });
+
+  // mobile: toggle simple menu (if you want to expand later)
+  // (kept minimal — nav is mostly static on desktop)
+  </script>
 </body>
 </html>
+
